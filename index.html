@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Mendes de Sousa Almeida | Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Apresentação e navegação -->
+  <header class="cabecalho" id="inicio">
+    <div class="largura">
+      <div class="barra">
+        <a class="marca" href="#inicio">Gabriel Mendes | Portfólio</a>
+        <button id="tema" type="button" aria-pressed="false">Tema escuro</button>
+      </div>
+      <p class="curso">UCSAL · Engenharia de Software</p>
+      <h1>Gabriel Mendes de Sousa Almeida</h1>
+      <p class="chamada">Aprendizado, prática e projetos em desenvolvimento na área de tecnologia.</p>
+      <nav class="menu" aria-label="Seções do portfólio">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#conhecimentos">Conhecimentos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal do portfólio -->
+  <main class="largura">
+    <section id="sobre" class="secao apresentacao">
+      <div>
+        <h2>Sobre mim</h2>
+        <p>Sou estudante do primeiro semestre de Engenharia de Software na UCSAL e estou construindo minha base em desenvolvimento. Tenho interesse em transformar ideias em soluções digitais e evoluir a cada projeto.</p>
+        <p id="mais-sobre" hidden>Neste momento, estou fortalecendo meus conhecimentos em HTML, CSS e JavaScript. Também estudo lógica de programação e a linguagem Java, buscando escrever códigos cada vez mais organizados e funcionais.</p>
+        <button class="secundario" id="mais" type="button" aria-controls="mais-sobre" aria-expanded="false">Mostrar mais</button>
+      </div>
+      <aside class="extra">
+        <h3>Próximos passos</h3>
+        <p>Aprofundar JavaScript, praticar responsividade e desenvolver projetos que resolvam problemas do dia a dia.</p>
+        <a href="../laboratorio-dom/index.html">Abrir laboratório de DOM</a>
+      </aside>
+    </section>
+
+    <section id="conhecimentos" class="secao">
+      <h2>Conhecimentos e tecnologias</h2>
+      <ul class="assuntos" aria-label="Assuntos estudados">
+        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Java</li><li>Flexbox</li><li>Responsividade</li>
+      </ul>
+      <table>
+        <caption>Conhecimentos em desenvolvimento</caption>
+        <thead><tr><th scope="col">Tecnologia</th><th scope="col">Nível</th><th scope="col">Onde aplico</th></tr></thead>
+        <tbody>
+          <tr><td>HTML</td><td>Básico</td><td>Estruturação de páginas e formulários</td></tr>
+          <tr><td>CSS</td><td>Básico</td><td>Estilização, layouts e adaptação para telas menores</td></tr>
+          <tr><td>JavaScript</td><td>Em aprendizado</td><td>Manipulação do DOM e interatividade</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="projetos" class="secao">
+      <h2>Projetos e práticas</h2>
+      <div class="filtros">
+        <label for="filtro">Filtrar por categoria</label>
+        <select id="filtro"><option value="todos">Todas</option><option value="web">Web</option><option value="logica">Lógica</option></select>
+        <span id="contador" role="status"></span>
+      </div>
+      <div class="cards" id="lista-projetos">
+        <article class="card" data-categoria="web">
+          <h3>Página pessoal responsiva</h3>
+          <p>Uma página desenvolvida para praticar estrutura HTML, organização visual e adaptação a diferentes tamanhos de tela.</p>
+          <p class="tecnologias">HTML · CSS · JavaScript</p>
+          <a class="botao" href="#inicio">Ver portfólio</a>
+          <button type="button" class="remover">Remover</button>
+        </article>
+        <article class="card" data-categoria="logica">
+          <h3>Calculadora de desempenho</h3>
+          <p>Aplicação simples que recebe três notas, calcula a média e apresenta o resultado de acordo com as regras definidas.</p>
+          <p class="tecnologias">HTML · JavaScript</p>
+          <a class="botao" href="../aula11-javascript/index.html">Testar calculadora</a>
+          <button type="button" class="remover">Remover</button>
+        </article>
+        <article class="card" data-categoria="web">
+          <h3>Painel interativo de projetos</h3>
+          <p>Experimentos com seleção de elementos, eventos, filtros e atualização dinâmica de conteúdo.</p>
+          <p class="tecnologias">HTML · CSS · JavaScript</p>
+          <a class="botao" href="../laboratorio-dom/index.html">Abrir laboratório</a>
+          <button type="button" class="remover">Remover</button>
+        </article>
+      </div>
+      <details class="cadastro">
+        <summary>Cadastrar projeto</summary>
+        <p>Os projetos adicionados e removidos voltam ao estado inicial ao recarregar a página.</p>
+        <form id="cadastro" novalidate>
+          <label for="nome-projeto">Nome do projeto</label>
+          <input id="nome-projeto" name="nome" minlength="3" required>
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria"><option value="web">Web</option><option value="logica">Lógica</option></select>
+          <button type="submit">Adicionar projeto</button>
+        </form>
+      </details>
+      <p id="status" role="status"></p>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Contato</h2>
+      <p>Envie uma mensagem diretamente para mim através do formulário abaixo.</p>
+      <form id="form-contato" action="mailto:gabrielmendes.almeida@ucsal.edu.br" method="POST" enctype="text/plain">
+        <label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required>
+        <label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="assunto">Assunto</label><input id="assunto" name="assunto" required>
+        <label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar mensagem</button>
+      </form>
+      <p id="retorno-contato" role="status"></p>
+    </section>
+  </main>
+  <!-- Identificação da atividade -->
+  <footer><p>Gabriel Mendes de Sousa Almeida · 2026</p><p>Engenharia de Software · Universidade Católica do Salvador</p></footer>
+</body>
+</html>
